@@ -1,3 +1,6 @@
 * {
     background-color: darkcyan;
 }
+.hide{
+    display: none;
+}

@@ -1,5 +1,7 @@
 var timerEl = document.querySelector("#timer");
-var startBtn = document.querySelector("#start")
+var startBtn = document.querySelector("#start");
+var startPage = document.querySelector("#start-page");
+
 var secondsLeft = 10;
 //TODO:Create timed quiz that stores high scores
 
@@ -9,6 +11,9 @@ var secondsLeft = 10;
 //TODO: WHEN I click the start button
     //create a function to start the game
     function gameStart() {
+        //hide start screen
+        startPage.setAttribute("class", "hide");
+
         // THEN a timer starts 
             // Sets interval in variable
             var timerInterval = setInterval( function() {
@@ -22,15 +27,22 @@ var secondsLeft = 10;
                 // endGame;
                 alert("No Points for You!");
               }
-          
+           // and I am presented with a question
+            
+             //hide questions then reveal first and hide start when start is selected
+              function loadQuestion() {
+
+              }
+
             }, 1000);
+            
+
+
         }  
     
     startBtn.addEventListener("click", gameStart)
     
-        // and I am presented with a question
-            
-             //hide questions then reveal first and hide start when start is selected
+       
 
 //TODO: WHEN I answer a question
         //THEN I am presented with another question
