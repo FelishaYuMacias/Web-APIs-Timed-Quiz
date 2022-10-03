@@ -4,19 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="./style.css">
+     <link rel="stylesheet" href="./assets/css/style.css">
      <title>Quiz</title>
      <!-- Update title to be more descriptive -->
    
 </head>
 <body>
     <nav>
-        <button> <!--High Scores--> </button> <!--left-->
-        <p> <!--Timer--> </p> <!--left-->
+        <a href="./highscorepage.html">High Scores!</a> <!--left-->
+        <p id="timer"> <!--Timer--> </p> <!--right-->
     </nav>
-   <main>
-        
-   </main>
+    <main>
+       <section id="start-page">
+        <h1>
+            Probably the only quiz about the amazing film "The Velocipastor".
+        </h1>
+        <p>
+            You will have 60 seconds to answer all of the questions. For each wrong answer you will have 5 seconds deducted. Your remaining time will be your final score.
+        </p>
+        <button id="start">Start Quiz</button>
+        </section>  
+
+        <section id="quiz" class="hide">
+            <div id="right" class="hide"></div>
+            <h2 id="questions"></h2>
+            <div id="options"></div>
+        </section>
+
+        <section id="score-log" class="hide">
+            <h2>You finished the quiz! Your score was <span id="score"></span>. Enter your initials to save your score.</h2>
+            <form>
+                <input type="text" placeholder="put initials here">
+                <button>Add my score!</button>
+            </form>
+        </section>
+    </main>
+  
    <footer></footer>
    <script src="./assets/js/questions.js"></script>
     <script src= "./assets/js/script.js"></script>
