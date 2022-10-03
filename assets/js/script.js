@@ -1,6 +1,6 @@
 var timerEl = document.querySelector("#timer");
 var startBtn = document.querySelector("#start")
-var secondsLeft = 60;
+var secondsLeft = 10;
 //TODO:Create timed quiz that stores high scores
 
 // write quiz questions-reference questions.js
@@ -15,12 +15,13 @@ var secondsLeft = 60;
               secondsLeft--;
               timerEl.textContent = secondsLeft + " Seconds until you lose!";
           
-            //   if(secondsLeft === 0) {
-            //     // ends game at 0 seconds
-            //     endGame;
-            //     // Calls function to create and append image
-            //     alert("No Points for You!");
-            //   }
+              if(secondsLeft === 0) {
+                // Stops execution of action at set interval
+                clearInterval(timerInterval);
+                // ends game at 0 seconds
+                // endGame;
+                alert("No Points for You!");
+              }
           
             }, 1000);
         }  
