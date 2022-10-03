@@ -1,3 +1,4 @@
+// sheet with list of all the questions and correct answers for the quiz
 var questions = [
     {
         question: "Is The Velocipastor the greatest movie of all time?"
@@ -22,6 +23,6 @@ var questions = [
     {
         question: "What was the estimtated budget for the film?"
         options: ["$32,000", "$59,000", "$78,000", "$103,000"]
-        right: " "
+        right: "$32,000"
     },
 ]
