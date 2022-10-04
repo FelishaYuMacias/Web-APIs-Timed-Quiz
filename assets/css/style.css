@@ -4,3 +4,7 @@
 .hide{
     display: none;
 }
+.answers {
+    display: block;
+    background-color: aliceblue;
+}
