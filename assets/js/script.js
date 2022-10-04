@@ -1,14 +1,19 @@
 var timerEl = document.querySelector("#timer");
 var startBtn = document.querySelector("#start");
 var startPage = document.querySelector("#start-page");
-var quizPage = document.querySelector ("#quiz")
-var quizQuestion = document.querySelector ("#questions")
-var quizOptions = document.querySelector ("#options")
-var quizCorrect = document.querySelector ("right")
-var timerInterval;
+var quizPage = document.querySelector ("#quiz");
+var quizQuestion = document.querySelector ("#questions");
+var quizOptions = document.querySelector ("#options");
+var quizCorrect = document.querySelector ("#right");
+var addScore = document.querySelector ("#add-score")
+var initials = document.querySelector ("#initials")
+var scoreboard = document.querySelector ("#scoreboard")
 
+var timerInterval;
 var secondsLeft = questions.length*15;
-var index = 0
+var index = 0;
+var addInitials;
+
 //TODO:Create timed quiz that stores high scores
 
 // write quiz questions-reference questions.js
@@ -20,7 +25,7 @@ function gameStart() {
     //hide start screen
     startPage.setAttribute("class", "hide");
     //show question page
-    quizPage.setAttribute ("class", "show")
+    quizPage.setAttribute ("class", "show");
     
     // THEN a timer starts 
     // Sets interval in variable
@@ -76,7 +81,8 @@ function loadQuestion( ) {
 function userAnswer () {
     //did user choose wrong answer
     if(this.value !==questions[index].right){
-    //    //deduct time from timer
+        //WHEN I answer a question incorrectly
+       //deduct time from timer
         secondsLeft -= 10
 
         //prevent timer from going below 0
@@ -99,7 +105,7 @@ function userAnswer () {
     }
 }    
 
-//TODO: WHEN all questions are answered or the timer reaches 0
+// WHEN all questions are answered or the timer reaches 0
         //THEN the game is over
 function endGame() {
     // stop timer
@@ -115,11 +121,36 @@ function endGame() {
   
     // hide questions section
     quizPage.setAttribute("class", "hide");
-  }
-
-//TODO: WHEN I answer a question incorrectly
-        //THEN time is subtracted from the clock
-
-
+}
 //TODO: WHEN the game is over
         // THEN I can save my initials and my score
+
+    // add event listener to Add Score button
+    addScore.addEventListener("click", addInitials)
+
+// create function to add ititials to local storage, to view on page, and to switch to Highscore page
+function addInitials (event) {
+    event.preventDefault()
+    //value of input box
+    var initialsText = initials.value;
+    console.log(initialsText)
+     // get previous scores from localstorage, if null, set to empty array
+     var highscores =
+     JSON.parse(window.localStorage.getItem("highscores")) || [];
+     //create new score for current user
+    var userScore ={
+        initials: initialsText,
+        score: secondsLeft
+    }
+    console.log (userScore)
+
+    // save to localstorage
+    highscores.push(userScore);
+    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+    
+//confirm they want to view scoreboard and redirect 
+    var view = confirm ("View all high scores?")
+    if (view) {
+        window.location.replace("./highscorepage.html");
+    }
+}
