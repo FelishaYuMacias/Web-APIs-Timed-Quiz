@@ -45,13 +45,28 @@ function gameStart() {
 function loadQuestion( ) {
     //choose question and options from array
     var currentQuestion = questions[index];
-    //put question and answers on screen
+    //put question on screen
     quizQuestion.textContent= currentQuestion.question;
 
-    //create button for each answer
-    quizOptions.textContent= currentQuestion.options
-    quizOptions.setAttribute("class","answers")
-            }
+    // remove previous question options
+    quizOptions.innerHTML = "";
+  
+    // loop over question options
+    currentQuestion.options.forEach(function(options, i) {
+      // create new button for each choice
+      var optionBtn = document.createElement("button");
+      optionBtn.setAttribute("class", "answers");
+      optionBtn.setAttribute("value", options);
+  
+      optionBtn.textContent = i + 1 + ". " + options;
+  
+      // attach click event listener to each choice
+    //   optionBtn.onclick = questionClick;
+  
+      // display on the page
+      quizOptions.appendChild(optionBtn);
+    });
+}
         
 
 startBtn.addEventListener("click", gameStart)
