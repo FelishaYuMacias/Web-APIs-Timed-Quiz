@@ -8,6 +8,22 @@ var quizCorrect = document.querySelector ("right")
 
 var secondsLeft = questions.length*15;
 var index = 0
+var timerInterval = setInterval( function() {
+    secondsLeft--;
+    timerEl.textContent = secondsLeft + " Seconds until you lose!";
+    
+    if(secondsLeft === 0) {
+        // Stops execution of action at set interval
+        clearInterval(timerInterval);
+        // ends game at 0 seconds
+        endGame;
+        alert("No Points for You!");
+    }
+    // and I am presented with a question
+    
+    //hide questions then reveal first and hide start when start is selected
+    
+}, 1000);
 //TODO:Create timed quiz that stores high scores
 
 // write quiz questions-reference questions.js
@@ -23,22 +39,6 @@ function gameStart() {
     
     // THEN a timer starts 
     // Sets interval in variable
-    var timerInterval = setInterval( function() {
-        secondsLeft--;
-        timerEl.textContent = secondsLeft + " Seconds until you lose!";
-        
-        if(secondsLeft === 0) {
-            // Stops execution of action at set interval
-            clearInterval(timerInterval);
-            // ends game at 0 seconds
-            // endGame;
-            alert("No Points for You!");
-        }
-        // and I am presented with a question
-        
-        //hide questions then reveal first and hide start when start is selected
-        
-    }, 1000);
     loadQuestion() 
 } 
 startBtn.addEventListener("click", gameStart)
@@ -92,19 +92,33 @@ function userAnswer () {
     
     //check to see if user answered all questions
     if (index === questions.length) {
-        endQuiz ();
+        endGame ();
     } else {
       loadQuestion()  
     }
-    
 }    
 
+//TODO: WHEN all questions are answered or the timer reaches 0
+        //THEN the game is over
+function endGame() {
+    // stop timer
+    clearInterval(timerInterval);
+  
+    // reveal high score page
+    var scoreSectionEl = document.querySelector("#score-log");
+    scoreSectionEl.setAttribute("class", "show");
+  
+    // show final score
+    var finalScoreEl = document.querySelector("#score");
+    finalScoreEl.textContent = secondsLeft;
+  
+    // hide questions section
+    quizPage.setAttribute("class", "hide");
+  }
 
 //TODO: WHEN I answer a question incorrectly
         //THEN time is subtracted from the clock
 
-//TODO: WHEN all questions are answered or the timer reaches 0
-        //THEN the game is over
 
 //TODO: WHEN the game is over
         // THEN I can save my initials and my score
