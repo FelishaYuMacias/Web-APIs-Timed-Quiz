@@ -6,7 +6,7 @@ var quizQuestion = document.querySelector ("#questions")
 var quizOptions = document.querySelector ("#options")
 var quizCorrect = document.querySelector ("right")
 
-var secondsLeft = questions.length*5;
+var secondsLeft = questions.length*15;
 var index = 0
 //TODO:Create timed quiz that stores high scores
 
@@ -41,6 +41,7 @@ function gameStart() {
     }, 1000);
     loadQuestion() 
 } 
+startBtn.addEventListener("click", gameStart)
 
 function loadQuestion( ) {
     //choose question and options from array
@@ -58,24 +59,46 @@ function loadQuestion( ) {
       optionBtn.setAttribute("class", "answers");
       optionBtn.setAttribute("value", options);
   
-      optionBtn.textContent = i + 1 + ". " + options;
+      optionBtn.textContent =options;
   
-      // attach click event listener to each choice
-    //   optionBtn.onclick = questionClick;
+    //   attach click event listener to each option
+    optionBtn.addEventListener("click", userAnswer)
   
       // display on the page
       quizOptions.appendChild(optionBtn);
     });
 }
-        
-
-startBtn.addEventListener("click", gameStart)
-        
-       
 
 //TODO: WHEN I answer a question
         //THEN I am presented with another question
         //reveal subsequent qustions when answer is selected 
+function userAnswer () {
+    //did user choose wrong answer
+    if(this.value !==questions[index].right){
+    //    //deduct time from timer
+        secondsLeft -= 10
+
+        //prevent timer from going below 0
+        if (secondsLeft <0) {
+            secondsLeft=0
+        }
+        alert ("Wrong Answer")
+    }
+    else {
+        alert ("Correct!")
+    }
+    //advance to next question
+    index++;
+    
+    //check to see if user answered all questions
+    if (index === questions.length) {
+        endQuiz ();
+    } else {
+      loadQuestion()  
+    }
+    
+}    
+
 
 //TODO: WHEN I answer a question incorrectly
         //THEN time is subtracted from the clock

@@ -22,7 +22,7 @@ var questions = [
     },
     {
         question: "What was the estimtated budget for the film?",
-        options: ["$32,000", "$59,000", "$78,000", "$103,000"],
-        right: "$32,000"
+        options: ["$36,000", "$59,000", "$78,000", "$103,000"],
+        right: "$36,000"
     },
 ]
