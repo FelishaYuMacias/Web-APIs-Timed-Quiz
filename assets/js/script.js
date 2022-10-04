@@ -42,15 +42,14 @@ function gameStart() {
     loadQuestion() 
 } 
 
-//choose question and options from array
-function loadQuestion(index) {
-   
+function loadQuestion( ) {
+    //choose question and options from array
+    var currentQuestion = questions[index];
     //put question and answers on screen
     quizQuestion.textContent= currentQuestion.question;
 
     //create button for each answer
     quizOptions.textContent= currentQuestion.options
-    
     quizOptions.setAttribute("class","answers")
             }
         
