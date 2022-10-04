@@ -1,3 +1,5 @@
+var clearBoard = document.querySelector (".clear-board")
+
 function showScores() {
     // either get scores from localstorage or set to empty array
     var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
@@ -23,7 +25,7 @@ function showScores() {
     window.location.reload();
   }
   
-  document.getElementById("clear").onclick = clearHighscores;
+  clearBoard.addEventListener("click", clearHighscores)
   
   // run function when page loads
   showScores();
