@@ -5,25 +5,10 @@ var quizPage = document.querySelector ("#quiz")
 var quizQuestion = document.querySelector ("#questions")
 var quizOptions = document.querySelector ("#options")
 var quizCorrect = document.querySelector ("right")
+var timerInterval;
 
 var secondsLeft = questions.length*15;
 var index = 0
-var timerInterval = setInterval( function() {
-    secondsLeft--;
-    timerEl.textContent = secondsLeft + " Seconds until you lose!";
-    
-    if(secondsLeft === 0) {
-        // Stops execution of action at set interval
-        clearInterval(timerInterval);
-        // ends game at 0 seconds
-        endGame;
-        alert("No Points for You!");
-    }
-    // and I am presented with a question
-    
-    //hide questions then reveal first and hide start when start is selected
-    
-}, 1000);
 //TODO:Create timed quiz that stores high scores
 
 // write quiz questions-reference questions.js
@@ -39,6 +24,22 @@ function gameStart() {
     
     // THEN a timer starts 
     // Sets interval in variable
+        timerInterval = setInterval( function() {
+        secondsLeft--;
+        timerEl.textContent = secondsLeft + " Seconds until you lose!";
+        
+        if(secondsLeft === 0) {
+            // Stops execution of action at set interval
+            clearInterval(timerInterval);
+            // ends game at 0 seconds
+            endGame;
+            alert("No Points for You!");
+        }
+        // and I am presented with a question
+        
+        //hide questions then reveal first and hide start when start is selected
+        
+    }, 1000);
     loadQuestion() 
 } 
 startBtn.addEventListener("click", gameStart)
