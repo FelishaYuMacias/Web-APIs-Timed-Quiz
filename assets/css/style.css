@@ -18,6 +18,9 @@ button, button.try-again a {
     font-size: large;
     margin-left: 5px;
 }
+button:hover {
+    background-color: var(--text);
+}
 #timer {
     color: var(--text);
     font-size: large;
@@ -66,6 +69,9 @@ h1, h2 {
     background-color: var(--accent);
     min-height:55vh;
     justify-items: center;
+}
+#initials:hover {
+    background-color: var(--text);
 }
 
 #start-page p {

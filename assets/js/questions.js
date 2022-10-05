@@ -6,7 +6,7 @@ var questions = [
         right: "Hell Yes"
     },
     {
-        question: "Where does the Velocipastor get his powers?",
+        question: "Where is the Velocipastor when he gets his powers?",
         options:["Idaho", "China", "New York", "Australia"],
         right: "China"
     },
@@ -17,8 +17,8 @@ var questions = [
     },
     {
         question: "How are his parents killed?",
-        options: ["Car fire", "Car crash", "Murderd by ninjas", "He eats them" ],
-        right: "Car fire"
+        options: ["He Eats Them", "Car Crash", "Car Fire", "Murderd by ninjas" ],
+        right: "Car Fire"
     },
     {
         question: "What was the estimtated budget for the film?",
