@@ -1,11 +1,107 @@
+:root {
+    --primary: #616161;
+    --accent: darkcyan;
+    --header: #8B0000;
+    --text: lightcyan;
+    --highlight: #f0a0a0;
+  }
+
 * {
-    background-color: darkcyan;
+/* styling for both pages  */
+background-color: var(--primary);
+box-sizing:border-box;
 }
+
+button, button.try-again a {
+    display: flex;
+    background-color: var(--highlight);
+    font-size: large;
+    margin-left: 5px;
+}
+#timer {
+    color: var(--text);
+    font-size: large;
+}
+/* remove title from being visable on pages  */
+title {
+    display: none;
+}
+#info {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--accent);
+    justify-content: center;
+}
+img {
+    max-height: 50vh;
+}
+ /* styling for quiz pages  */
 .hide{
     display: none;
 }
-button {
-    display: block;
-    background-color: aliceblue;
+body{
+width: 50%;
+min-height:50vh;
+display: block;
 }
+nav {
+    margin: 0,
+}
+nav a {
+    font-size: large;
+    color: var(--text);
+}
+h1, h2 {
+    background-color: var(--header);
+    color: var(--text);
+    padding: 10px;
+    text-align: center;
+    font-size: xx-large;
+}
+#options {
+    background-color: var(--accent);
+}
+#start-page, #quiz {
+    margin: 5% 15%;
+    background-color: var(--accent);
+    min-height:55vh;
+    justify-items: center;
+}
+
+#start-page p {
+    background-color: var(--accent);
+    padding: 5px;
+    font-size: larger;
+}
+button.answers {
+    width: 100%;
+    margin-bottom: 5px;
+    margin-left: 0;
+}
+/* styling for highscore page  */
+main.score {
+    /* entire scoreboard including header and buttons  */
+background-color: var(--accent);
+min-height:50vh;
+
+}
+
+main.score button {
+    display: inline-flex;
+    margin: 25% 15% 5%;
+}
+h2 {
+background-color: var(--header);
+text-align: center;
+color: var(--text);
+}
+
+li {
+    list-style-image: url('sqpurple.gif');
+    background-color: var(--accent);
+    padding: 10px;
+}
+
+
+
  

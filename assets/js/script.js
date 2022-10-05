@@ -37,7 +37,7 @@ function gameStart() {
             // Stops execution of action at set interval
             clearInterval(timerInterval);
             // ends game at 0 seconds
-            endGame;
+            return;
             alert("No Points for You!");
         }
         // and I am presented with a question
@@ -147,7 +147,7 @@ function addInitials (event) {
     // save to localstorage
     highscores.push(userScore);
     window.localStorage.setItem("highscores", JSON.stringify(highscores));
-    
+
 //confirm they want to view scoreboard and redirect 
     var view = confirm ("View all high scores?")
     if (view) {
