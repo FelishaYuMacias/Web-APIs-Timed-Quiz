@@ -1,17 +1,17 @@
 // sheet with list of all the questions and correct answers for the quiz
 var questions = [
     {
-        question: "Is The Velocipastor the greatest movie of all time?",
+        question: "Is The VelociPastor the greatest movie of all time?",
         options: ["No", "Yes","IDK", "Hell Yes"],
         right: "Hell Yes"
     },
     {
-        question: "Where is the Velocipastor when he gets his powers?",
+        question: "Where is the VelociPastor when he gets his powers?",
         options:["Idaho", "China", "New York", "Australia"],
         right: "China"
     },
     {
-        question: "Who or what does the Velocipastor fight using his powers?",
+        question: "Who or what does the VelociPciastor fight using his powers?",
         options: ["Other Dinosaurs", "Crime", "Ninjas", "Crime and Ninjas"],
         right: "Crime and Ninjas"
     },
