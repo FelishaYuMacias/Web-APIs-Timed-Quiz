@@ -14,12 +14,8 @@ var secondsLeft = questions.length*15;
 var index = 0;
 var addInitials;
 
-//TODO:Create timed quiz that stores high scores
 
-// write quiz questions-reference questions.js
-
-
-//TODO: WHEN I click the start button
+// WHEN I click the start button
 //create a function to start the game
 function gameStart() {
     //hide start screen
@@ -37,7 +33,7 @@ function gameStart() {
             // Stops execution of action at set interval
             clearInterval(timerInterval);
             // ends game at 0 seconds
-            return;
+            endGame ();
             alert("No Points for You!");
         }
         // and I am presented with a question
@@ -75,7 +71,7 @@ function loadQuestion( ) {
     });
 }
 
-//TODO: WHEN I answer a question
+// WHEN I answer a question
         //THEN I am presented with another question
         //reveal subsequent qustions when answer is selected 
 function userAnswer () {
@@ -122,7 +118,7 @@ function endGame() {
     // hide questions section
     quizPage.setAttribute("class", "hide");
 }
-//TODO: WHEN the game is over
+// WHEN the game is over
         // THEN I can save my initials and my score
 
     // add event listener to Add Score button

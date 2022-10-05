@@ -17,7 +17,7 @@ var questions = [
     },
     {
         question: "How are his parents killed?",
-        options: ["He Eats Them", "Car Crash", "Car Fire", "Murderd by ninjas" ],
+        options: ["He Eats Them", "Car Crash", "Car Fire", "Murderd by Ninjas"],
         right: "Car Fire"
     },
     {
