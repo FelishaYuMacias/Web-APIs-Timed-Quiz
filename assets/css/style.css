@@ -1,9 +1,8 @@
 :root {
     --primary: #616161;
-    --accent: darkcyan;
-    --header: #8B0000;
+    --accent: rgb(241, 102, 38);
+    --header: #e03c31 ;
     --text: lightcyan;
-    --highlight: #f0a0a0;
   }
 
 * {
@@ -11,15 +10,21 @@
 background-color: var(--primary);
 box-sizing:border-box;
 }
+body {
+    margin-left: auto;
+    margin-right: auto;
+}
 
 button, button.try-again a {
     display: flex;
-    background-color: var(--highlight);
+    background-color: var(--header);
     font-size: large;
-    margin-left: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text);
 }
 button:hover {
-    background-color: var(--text);
+    background-color: var(--accent);
 }
 #timer {
     color: var(--text);
@@ -32,7 +37,7 @@ title {
 #info {
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--accent);
+    background-color: var(--primary);
     justify-content: center;
 }
 img {
@@ -55,27 +60,28 @@ nav a {
     color: var(--text);
 }
 h1, h2 {
-    background-color: var(--header);
-    color: var(--text);
+    background-color: var(--primary);
+    color: var(--header);
     padding: 10px;
     text-align: center;
     font-size: xx-large;
 }
 #options {
-    background-color: var(--accent);
+    background-color: var(--primary);
 }
 #start-page, #quiz {
-    margin: 5% 15%;
-    background-color: var(--accent);
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--primary);
     min-height:55vh;
-    justify-items: center;
+    align-items: center;
 }
 #initials:hover {
     background-color: var(--text);
 }
 
 #start-page p {
-    background-color: var(--accent);
+    background-color: var(--primary);
     padding: 5px;
     font-size: larger;
 }
@@ -87,7 +93,7 @@ button.answers {
 /* styling for highscore page  */
 main.score {
     /* entire scoreboard including header and buttons  */
-background-color: var(--accent);
+background-color: var(--primary);
 min-height:50vh;
 
 }
@@ -97,14 +103,14 @@ main.score button {
     margin: 25% 15% 5%;
 }
 h2 {
-background-color: var(--header);
+background-color: var(--primary);
 text-align: center;
-color: var(--text);
+color: var(--header);
 }
 
 li {
     list-style-image: url('sqpurple.gif');
-    background-color: var(--accent);
+    background-color: var(--primary);
     padding: 10px;
 }
 
